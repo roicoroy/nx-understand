@@ -18,6 +18,23 @@
           "buildTarget": "strapi-server:build:production"
         }
       }
+    },
+    "strapi": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "strart": {
+          "cwd": "server/strapi-server",
+          "command": "strapi start"
+        },
+        "build": {
+          "cwd": "server/strapi-server",
+          "command": "strapi build"
+        },
+        "develop": {
+          "cwd": "server/strapi-server",
+          "command": "strapi develop"
+        }
+      }
     }
   },
   "tags": []

@@ -1,7 +1,21 @@
 {
-  "extends": "../../tsconfig.base.json",
-  "files": [],
-  "include": [],
+  "extends": "@strapi/typescript-utils/tsconfigs/server",
+  "include": [
+    "./",
+    "./**/*.ts",
+    "./**/*.js",
+    "src/**/*.json"
+  ],
+  "exclude": [
+    "node_modules/",
+    "build/",
+    "dist/",
+    ".cache/",
+    ".tmp/",
+    "src/admin/",
+    "**/*.test.*",
+    "src/plugins/**"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -11,6 +25,9 @@
     }
   ],
   "compilerOptions": {
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "outDir": "dist",
+    "rootDir": ".",
+    "composite": true
   }
 }
