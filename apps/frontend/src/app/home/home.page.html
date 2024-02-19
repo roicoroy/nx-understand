@@ -1,12 +1,14 @@
-<!-- <ion-header>
+<ion-header>
   <ion-toolbar color="secondary">
     <ion-title class="Averia-Bold">
-      Blank
+      {{ homePage.title }}
     </ion-title>
   </ion-toolbar>
-</ion-header> -->
+</ion-header>
 
 <ion-content color="pink">
+
+  <img src="../../assets/registered.png" alt="">
 
   <ion-grid>
     <ion-row>
@@ -17,10 +19,17 @@
       </ion-col>
       <ion-col class="content">
         <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
+            <ion-card-title>
+              <ion-text size="large" class="Averia-bold" color="success">
+                Who are we?
+              </ion-text>
+            </ion-card-title>
+          </ion-card-header>
           <ion-card-content>
-            <strong class="Averia-Regular">Ready to create an app?</strong>
             <ion-text class="Averia-Regular" color="tertiary">
-              {{ text }}
+              {{ homePage.description }}
             </ion-text>
           </ion-card-content>
         </ion-card>

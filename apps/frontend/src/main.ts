@@ -4,7 +4,7 @@ import { RouteReuseStrategy, provideRouter } from '@angular/router';
 import { IonicRouteStrategy, provideIonicAngular } from '@ionic/angular/standalone';
 import { environment } from './environments/environment';
 import { IMAGE_CONFIG } from '@angular/common';
-import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 // Custom Elements
@@ -24,8 +24,6 @@ import { register } from 'swiper/element/bundle';
 register();
 // Storage
 import { IonicStorageModule } from '@ionic/storage-angular';
-// Stripe
-import { NgxStripeModule } from 'ngx-stripe';
 // Translate
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -64,10 +62,6 @@ bootstrapApplication(AppComponent, {
       provide: LOCALE_ID,
       useValue: 'en'
     },
-    {
-      provide: RouteReuseStrategy,
-      useClass: IonicRouteStrategy
-    },
     provideAnimationsAsync(),
     provideIonicAngular(),
     provideRouter(routes),
@@ -84,7 +78,6 @@ bootstrapApplication(AppComponent, {
         },
         defaultLanguage: 'en'
       }),
-      NgxStripeModule.forRoot(environment.STRIPE_KEY),
       IonicStorageModule.forRoot(),
       NgxsModule.forRoot([
       ]),
