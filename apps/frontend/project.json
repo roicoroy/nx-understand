@@ -8,17 +8,39 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/frontend",
         "index": "apps/frontend/src/index.html",
         "main": "apps/frontend/src/main.ts",
-        "polyfills": ["zone.js"],
+        "polyfills": [
+          "zone.js"
+        ],
         "tsConfig": "apps/frontend/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
-        "assets": ["apps/frontend/src/favicon.ico", "apps/frontend/src/assets"],
-        "styles": ["apps/frontend/src/styles.scss"],
-        "scripts": []
+        "assets": [
+          {
+            "glob": "**/*",
+            "input": "apps/frontend/src/assets",
+            "output": "assets"
+          },
+          {
+            "glob": "**/*.svg",
+            "input": "node_modules/ionicons/dist/ionicons/svg",
+            "output": "./svg"
+          }
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/indigo-pink.css",
+          "node_modules/ngx-lightbox/lightbox.css",
+          "apps/frontend/src/theme/variables.scss",
+          "apps/frontend/src/global.scss"
+        ],
+        "scripts": [
+          "node_modules/jquery/dist/jquery.min.js"
+        ]
       },
       "configurations": {
         "production": {
@@ -30,8 +52,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "2kb",
-              "maximumError": "4kb"
+              "maximumWarning": "120kb",
+              "maximumError": "400kb"
             }
           ],
           "outputHashing": "all"
@@ -66,6 +88,114 @@
       "executor": "@angular-devkit/build-angular:extract-i18n",
       "options": {
         "buildTarget": "frontend:build"
+      }
+    },
+    "assets": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/ion-mobile",
+          "command": "capacitor-assets generate --android"
+        },
+        "ios": {
+          "cwd": "apps/ion-mobile",
+          "command": "capacitor-assets generate --ios"
+        }
+      }
+    },
+    "cap-build": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/ion-frontend",
+          "command": "cap build android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap build ios"
+        }
+      }
+    },
+    "copy": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "live": {
+          "cwd": "apps/frontend",
+          "command": "cap copy"
+        },
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap copy android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap copy ios"
+        }
+      }
+    },
+    "open": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap open android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap open ios"
+        }
+      }
+    },
+    "run": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap run android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap run ios"
+        }
+      }
+    },
+    "sync": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap sync android --inline"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap sync ios --inline"
+        }
+      }
+    },
+    "update": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap update android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap update ios"
+        }
+      }
+    },
+    "add": {
+      "executor": "nx:run-commands",
+      "configurations": {
+        "android": {
+          "cwd": "apps/frontend",
+          "command": "cap add android"
+        },
+        "ios": {
+          "cwd": "apps/frontend",
+          "command": "cap add ios"
+        }
       }
     }
   }

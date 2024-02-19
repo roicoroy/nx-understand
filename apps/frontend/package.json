@@ -1,0 +1,9 @@
+{
+    "name": "frontend",
+    "dependencies": {
+    },
+    "devDependencies": {
+      "@capacitor/assets": "^2.0.4"
+    }
+  }
+  

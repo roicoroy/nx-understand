@@ -1,14 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcomeComponent } from './nx-welcome.component';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 @Component({
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
   standalone: true,
-  imports: [NxWelcomeComponent, RouterModule],
-  selector: 'nx-understand-root',
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  imports: [IonApp, IonRouterOutlet],
 })
 export class AppComponent {
-  title = 'frontend';
+  constructor() {}
 }
