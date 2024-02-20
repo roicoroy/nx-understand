@@ -8,7 +8,9 @@
     "ngrok": "ngrok http --domain=fine-currently-gazelle.ngrok-free.app 1337",
     "start:frontend": "nx run frontend:serve",
     "start:server": "nx run strapi-server:strapi --configuration=develop",
-    "start:app": "concurrently \"yarn ngrok\" \"yarn start:server\" \"yarn start:frontend\""
+    "start:app": "concurrently \"yarn ngrok\" \"yarn start:server\" \"yarn start:frontend\"",
+    "fire-serve": "firebase serve --config firebase.json",
+    "fire-deploy": "firebase deploy --only hosting --config firebase.json"
   },
   "private": true,
   "dependencies": {

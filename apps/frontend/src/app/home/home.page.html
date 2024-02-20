@@ -1,15 +1,11 @@
 <ion-header>
   <ion-toolbar color="secondary">
-    <ion-title class="Averia-Bold">
-      {{ homePage.title }}
+    <ion-title class="Averia-Bold" size="small">
+      {{ homePage.greetings }}
     </ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content color="pink">
-
-  <img src="../../assets/registered.png" alt="">
-
+<ion-content>
   <ion-grid>
     <ion-row>
       <ion-col size="12">
@@ -17,51 +13,76 @@
           <img src="../../assets/logo-full.png" alt="">
         </ion-card>
       </ion-col>
-      <ion-col class="content">
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Awesome Subtitle</ion-card-subtitle>
-            <ion-card-title>
-              <ion-text size="large" class="Averia-bold" color="success">
-                Who are we?
-              </ion-text>
-            </ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-text class="Averia-Regular" color="tertiary">
-              {{ homePage.description }}
-            </ion-text>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
     </ion-row>
   </ion-grid>
-
   <ion-grid class="ion-margin">
-    <ion-row>
-      <ion-col size="6">
-        <ion-button expand="block" fill="solid" size="large" color="secondary">
-          Wellbeing
-        </ion-button>
-      </ion-col>
-      <ion-col size="6">
-        <ion-button expand="block" fill="solid" size="large" color="secondary">
-          Mental Health
-        </ion-button>
+    <ion-row class="ion-text-center">
+      <ion-col size="12">
+        <ion-text color="primary">
+          <h1 class="who Averia-Bold">
+            Who are we?
+          </h1>
+        </ion-text>
       </ion-col>
     </ion-row>
-    <ion-row>
-      <ion-col size="6">
-        <ion-button expand="block" fill="solid" size="large" color="tertiary">
-          Useful Links
-        </ion-button>
+    <ion-row class="towers-top">
+      <ion-col size="4">
+        <ion-img class="tower-top" src="../../assets/towers/green-top.png"></ion-img>
       </ion-col>
-      <ion-col size="6">
-        <ion-button expand="block" fill="solid" size="large" color="tertiary">
-          Contact Us
-        </ion-button>
+      <ion-col size="4">
+        <ion-img class="tower-top" src="../../assets/towers/purple-top.png"></ion-img>
+      </ion-col>
+      <ion-col size="4">
+        <ion-img class="tower-top" src="../../assets/towers/yellow-top.png"></ion-img>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-text class="Averia-Regular" color="tertiary">
+          {{ homePage.description }}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="towers-bottom">
+      <ion-col size="4">
+        <ion-img src="../../assets/towers/green-bottom.png"></ion-img>
+      </ion-col>
+      <ion-col size="4">
+        <ion-img class="tower-bottom" src="../../assets/towers/purple-bottom.png"></ion-img>
+      </ion-col>
+      <ion-col size="4">
+        <ion-img src="../../assets/towers/yellow-bottom.png"></ion-img>
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <ion-list class="modules Averia-Regular">
+    <ion-list-header>
+      <ion-label color="secondary">
+        Modules
+      </ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let module of modules">
+      <ion-label class="Averia-Regular" color="primary">
+        {{ module.title }}
+      </ion-label>
+      <ion-note class="Averia-Regular" slot="end" color="success">
+        {{ module.date | date }}
+      </ion-note>
+    </ion-item>
+  </ion-list>
+  <ion-toolbar class="footer">
+    <ion-row>
+      <ion-col size="8">
+        <ion-text color="tertiary">
+          <span class="Averia-Regular">{{ homePage.url }}</span> <br />
+          <span class="Averia-Regular">{{ homePage.email }}</span>
+        </ion-text>
+      </ion-col>
+      <ion-col size="4">
+        <img src="../../assets/registered.png" alt="">
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-content>

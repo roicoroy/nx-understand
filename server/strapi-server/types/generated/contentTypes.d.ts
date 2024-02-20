@@ -585,6 +585,53 @@ export interface PluginContentReleasesReleaseAction
   };
 }
 
+export interface PluginI18NLocale extends Schema.CollectionType {
+  collectionName: 'i18n_locale';
+  info: {
+    singularName: 'locale';
+    pluralName: 'locales';
+    collectionName: 'locales';
+    displayName: 'Locale';
+    description: '';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  pluginOptions: {
+    'content-manager': {
+      visible: false;
+    };
+    'content-type-builder': {
+      visible: false;
+    };
+  };
+  attributes: {
+    name: Attribute.String &
+      Attribute.SetMinMax<
+        {
+          min: 1;
+          max: 50;
+        },
+        number
+      >;
+    code: Attribute.String & Attribute.Unique;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'plugin::i18n.locale',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginUsersPermissionsPermission
   extends Schema.CollectionType {
   collectionName: 'up_permissions';
@@ -736,50 +783,44 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface PluginI18NLocale extends Schema.CollectionType {
-  collectionName: 'i18n_locale';
+export interface PluginGoogleAuthMobileCredential
+  extends Schema.CollectionType {
+  collectionName: 'google-auth-mobile_credential';
   info: {
-    singularName: 'locale';
-    pluralName: 'locales';
-    collectionName: 'locales';
-    displayName: 'Locale';
-    description: '';
+    displayName: 'Google Creds';
+    singularName: 'credential';
+    pluralName: 'credentials';
+    description: 'Stores google auth credentials';
+    tableName: 'mobile_auth_creds';
   };
   options: {
+    privateAttributes: ['id', 'created_at'];
+    populateCreatorFields: true;
     draftAndPublish: false;
   };
   pluginOptions: {
     'content-manager': {
-      visible: false;
+      visible: true;
     };
     'content-type-builder': {
       visible: false;
     };
   };
   attributes: {
-    name: Attribute.String &
-      Attribute.SetMinMax<
-        {
-          min: 1;
-          max: 50;
-        },
-        number
-      >;
-    code: Attribute.String & Attribute.Unique;
+    client_id: Attribute.String & Attribute.Required & Attribute.Unique;
+    platform: Attribute.String & Attribute.Required & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'plugin::google-auth-mobile.credential',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
     updatedBy: Attribute.Relation<
-      'plugin::i18n.locale',
+      'plugin::google-auth-mobile.credential',
       'oneToOne',
       'admin::user'
-    > &
-      Attribute.Private;
+    >;
   };
 }
 
@@ -797,10 +838,11 @@ declare module '@strapi/types' {
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
+      'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'plugin::i18n.locale': PluginI18NLocale;
+      'plugin::google-auth-mobile.credential': PluginGoogleAuthMobileCredential;
     }
   }
 }
