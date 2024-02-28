@@ -39,7 +39,8 @@
           "apps/frontend/src/global.scss"
         ],
         "scripts": [
-          "node_modules/jquery/dist/jquery.min.js"
+          "node_modules/jquery/dist/jquery.min.js",
+          "apps/frontend/src/assets/lax/lib/lax.min.js"
         ]
       },
       "configurations": {

@@ -9944,6 +9944,11 @@ launch-editor@^2.6.0:
     picocolors "^1.0.0"
     shell-quote "^1.8.1"
 
+lax.js@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/lax.js/-/lax.js-2.0.3.tgz#74aed57a628db42fcfa91b7a746cec443a611a38"
+  integrity sha512-q2q0jVRwruvFdQZeeE3OwIszRIkey6CItPmB+BcTUFPgHd2R8LI+bntAI7d2GJEjheu79mzQ++MROkODuZoXlA==
+
 lazystream@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/lazystream/-/lazystream-1.0.1.tgz#494c831062f1f9408251ec44db1cba29242a2638"

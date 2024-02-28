@@ -1,0 +1,35 @@
+.content {
+    padding: 0;
+    background-color: blue;
+    background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    margin: 0;
+    /* background-size: 700px 700px; */
+    height: 1000000px;
+}
+
+.sprite {
+    height: 370px;
+    width: 370px;
+    background-image: url('../../assets/lax/assets/spritesheet.jpg');
+    background-repeat: no-repeat;
+    position: fixed;
+    left: calc(50vw - 185px);
+    top: calc(50vh - 185px);
+}
+
+#input {
+  text-align: center;
+  width: calc(100vw - 200px);
+  transform-origin: center;
+  margin-left: 100px;
+  margin-top: calc(50vh - 50px);
+  position: fixed;
+  font-size: 40px;
+  border: 0;
+  outline: 0;
+  background-color: #f544ad;
+  padding: 20px;
+  box-sizing: border-box;
+  color: white;
+  border-radius: 50px;
+}

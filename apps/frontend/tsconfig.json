@@ -4,10 +4,13 @@
     "useDefineForClassFields": false,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "allowJs": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": false
   },
   "files": [],
   "include": [],
