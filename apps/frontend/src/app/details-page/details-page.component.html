@@ -8,13 +8,30 @@
 </ion-header>
 
 
-<ion-content>
-    <!-- <div class="content">
+<ion-content [scrollEvents]="true" (ionScrollStart)="handleScrollStart()" (ionScroll)="handleScroll($any($event))"
+    (ionScrollEnd)="handleScrollEnd()">
+    <div class="lax-container">
+        <div class="conta">
+            <div class="circle">
+                <img src="assets/bubbles/Group 2.svg" alt="">
+            </div>
+            <div class="circle">
+                <img src="assets/bubbles/Group 1.svg" alt="">
+            </div>
+            <div class="circle">
+                <img src="assets/bubbles/Group 3.svg" alt="">
+            </div>
+            <div class="circle">
+                <img src="assets/bubbles/Group 4.svg" alt="">
+            </div>
+            <div class="circle">
+                <img src="assets/bubbles/Group 5.svg" alt="">
+            </div>
+        </div>
+    </div>
+    <!-- <input id='input' placeholder="type something..." autocomplete="false" autofocus />
+    <div class="content">
         <div class="sprite">
         </div>
     </div> -->
-
-    <input id='input' placeholder="type something..." autocomplete="false" autofocus />
-
-
 </ion-content>

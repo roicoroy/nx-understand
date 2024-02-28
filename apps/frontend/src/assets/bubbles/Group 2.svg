@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="78.7834 699.98 204.256 144.256" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="144.256" id="Filter" width="204.256" x="78.7834" y="699.98">
+<feGaussianBlur in="SourceGraphic" result="Blur" stdDeviation="0.351124"/>
+</filter>
+</defs>
+<clipPath id="ArtboardFrame">
+<rect height="144.256" width="204.256" x="78.7834" y="699.98"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="Layer" vectornator:layerName="Layer">
+<g opacity="1" vectornator:layerName="Group 2">
+<path d="M146.641 821.041C142.296 845.608 180.308 847.699 182.48 826.268C189.54 849.267 222.121 847.699 226.466 818.428C234.611 834.109 260.676 822.087 248.187 808.496C261.219 817.905 290 801.701 264.477 783.929C281.311 784.975 295.43 732.705 252.531 749.954C273.166 725.91 231.353 707.092 217.777 731.659C219.406 718.592 203.115 720.683 201.486 729.568C212.347 706.57 157.501 680.957 156.415 730.614C145.012 705.524 111.887 720.16 124.92 740.022C116.774 731.137 110.801 742.636 115.688 745.772C94.5102 723.296 67.9019 768.771 97.2253 775.043C65.1868 779.748 87.4509 808.496 103.742 797.52C93.4241 804.837 102.656 827.314 125.463 814.769C115.688 827.836 142.84 837.245 146.641 821.041Z" fill="none" filter="url(#Filter)" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.5" vectornator:blur="0.702247" vectornator:layerName="path 1"/>
+<text fill="#000000" font-family="Helvetica" font-size="14" opacity="1" stroke="none" text-anchor="start" transform="matrix(1 0 0 1 115.362 751.514)" vectornator:layerName="Text 1" vectornator:width="157.098" x="0" y="0">
+<tspan textLength="139.59" x="0" y="14">Practice makes &quot;good </tspan>
+<tspan textLength="132.624" x="0" y="31">enought&quot; ... does not </tspan>
+<tspan textLength="116.751" x="0" y="48">need to be perfect!</tspan>
+</text>
+</g>
+</g>
+</svg>

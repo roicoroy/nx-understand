@@ -1,36 +1,111 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonTitle, IonToolbar, IonHeader, IonButtons, IonBackButton, IonContent, IonLabel, IonItem } from "@ionic/angular/standalone";
+import { IonTitle, IonToolbar, IonHeader, IonButtons, IonBackButton, IonContent, IonLabel, IonItem, ScrollDetail, IonGrid, IonRow, IonCol } from "@ionic/angular/standalone";
 declare var lax: any;
 @Component({
   selector: 'nx-understand-details-page',
   standalone: true,
-  imports: [IonItem, IonLabel, IonContent, IonBackButton, IonButtons, IonHeader, IonToolbar, IonTitle, CommonModule],
+  imports: [IonCol, IonRow, IonGrid, IonItem, IonLabel, IonContent, IonBackButton, IonButtons, IonHeader, IonToolbar, IonTitle, CommonModule],
   templateUrl: './details-page.component.html',
-  styleUrl: './details-page.component.css',
+  styleUrl: './details-page.component.scss',
 })
 export class DetailsPageComponent implements AfterViewInit, OnInit {
+
+  handleScrollStart() {
+    // console.log('scroll start');
+  }
+
+  handleScroll(ev: CustomEvent<ScrollDetail>) {
+    lax.addDriver('scrollY', function () {
+      return ev.detail.currentY
+    })
+  }
+
+  handleScrollEnd() {
+    // console.log('scroll end');
+  }
 
   ngAfterViewInit() {
     window.onload = function () {
       lax.init()
+      // lax.addDriver('scrollY', () => { });
+      lax.addDriver('scrollY', function () {
+        return window.scrollY
+      });
 
-      const input: any = document.getElementById('input')
-
-      // Add lax driver for inputLength
-      lax.addDriver('inputLength', function () {
-        return input.value.length
-      })
-
-      lax.addElements("#input", {
-        'inputLength': {
-          "rotate": [
-            [0, 100],
-            [0, 360],
+      lax.addElements(".circle", {
+        scrollY: {
+          translateX: [
+            ["elInY", "elCenterY", "elOutY"],
+            [0, 'screenWidth/2', 'screenWidth'],
+            {
+              easing: 'easeInOutQuart',
+            }
           ],
+          // opacity: [
+          //   ["elInY", "elCenterY", "elOutY"],
+          //   [0, 1, 0],
+          //   {
+          //     easing: 'easeInOutCubic'
+          //   }
+          // ],
+          // "border-radius": [
+          //   ["elInY+200", "elCenterY", "elOutY-200"],
+          //   [0, 100, 0],
+          //   {
+          //     easing: 'easeInOutQuint',
+          //   }
+          // ],
+          // "box-shadow": [
+          //   ["elInY+200", "elCenterY", "elOutY-200"],
+          //   [50, 0, 50],
+          //   {
+          //     easing: 'easeInOutQuint',
+          //     cssFn: (val) => {
+          //       return `${val}px ${val}px ${val}px rgba(0,0,0,0.5)`
+          //     }
+          //   }
+          // ],
         }
       })
+    
     }
+
+    // const input: any = document.getElementById('input')
+
+    // // Add lax driver for inputLength
+    // lax.addDriver('inputLength', function () {
+    //   return input.value.length
+    // })
+
+    // lax.addElements("#input", {
+    //   'inputLength': {
+    //     "rotate": [
+    //       [0, 100],
+    //       [0, 360],
+    //     ],
+    //   }
+    // })
+
+    // const frameWidth = 370
+    // const frameCount = 12
+
+    // lax.addElements(".sprite", {
+    //   scrollY: {
+    //     "background-position": [
+    //       [0, 1e9],
+    //       [0, 1e9],
+    //       {
+    //         cssFn: function (val) {
+    //           const frame = Math.floor(val / 10) % frameCount
+    //           const x = frame * frameWidth
+
+    //           return `-${x}px 0px`
+    //         },
+    //       }
+    //     ]
+    //   }
+    // })
   }
 
   ngOnInit(): void {

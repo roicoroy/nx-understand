@@ -10,6 +10,10 @@ export const routes: Routes = [
     loadComponent: () => import('./details-page/details-page.component').then((m) => m.DetailsPageComponent),
   },
   {
+    path: 'lax',
+    loadChildren: () => import('./lax/lax.module').then( m => m.LaxPageModule)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',

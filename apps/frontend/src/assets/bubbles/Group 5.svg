@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="151.399 540.011 198.989 143.87" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:vectornator="http://vectornator.io" xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="143.87" id="Filter" width="198.989" x="151.399" y="540.011">
+<feGaussianBlur in="SourceGraphic" result="Blur" stdDeviation="0.351124"/>
+</filter>
+</defs>
+<clipPath id="ArtboardFrame">
+<rect height="143.87" width="198.989" x="151.399" y="540.011"/>
+</clipPath>
+<g clip-path="url(#ArtboardFrame)" id="Layer" vectornator:layerName="Layer">
+<g opacity="1" vectornator:layerName="Group 5">
+<path d="M274.22 558.466C273.335 533.533 235.725 539.432 238.08 560.844C226.37 539.828 194.836 548.17 196.704 577.703C185.462 564.07 162.484 581.273 177.538 591.954C162.827 585.476 138.068 607.336 166.741 619.382C150.06 621.878 147.176 675.944 185.523 650.111C170.368 677.937 215.191 687.601 223.333 660.74C224.47 673.859 239.965 668.41 239.701 659.38C233.886 684.141 292.873 697.726 283.558 648.939C299.953 671.092 329.288 649.857 312.392 633.157C322.215 640.144 325.653 627.65 320.218 625.605C345.626 643.159 362.144 593.128 332.157 593.121C362.505 581.826 334.725 558.365 321.088 572.503C329.648 563.191 315.924 543.14 296.242 560.174C303.069 545.352 274.552 541.825 274.22 558.466Z" fill="none" filter="url(#Filter)" opacity="1" stroke="#000000" stroke-linecap="butt" stroke-linejoin="miter" stroke-width="2.5" vectornator:blur="0.702247" vectornator:layerName="path 3"/>
+<text fill="#000000" font-family="Helvetica" font-size="14" opacity="1" stroke="none" text-anchor="start" transform="matrix(0.971607 -0.2366 0.2366 0.971607 187.977 591.516)" vectornator:layerName="Text 1" vectornator:width="151.226" x="0" y="0">
+<tspan textLength="134.627" x="0" y="14">The idea is for you to </tspan>
+<tspan textLength="96.5166" x="0" y="31">have a general </tspan>
+<tspan textLength="122.958" x="0" y="48">awareness - not be </tspan>
+<tspan textLength="110.496" x="0" y="65">qualified lawyers</tspan>
+</text>
+</g>
+</g>
+</svg>

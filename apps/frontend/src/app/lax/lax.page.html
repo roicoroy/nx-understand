@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>lax</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="body" [scrollEvents]="true" (ionScrollStart)="handleScrollStart()" (ionScroll)="handleScroll($any($event))"
+(ionScrollEnd)="handleScrollEnd()">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">lax</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+  <div style="height: 900px;">
+    <div style="margin-top: 200px;" class="lax lax_preset_fadeIn-50:100 lax_preset_spin">
+      Laxxx Example
+    </div>
+  </div>
+  
+
+
+</ion-content>
