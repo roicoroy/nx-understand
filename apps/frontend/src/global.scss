@@ -77,12 +77,18 @@ ion-fab {
     margin-bottom: 0px;
     margin-left: -10rem;
     margin-bottom: 40px;
-    
-  }
-  
-  .lax-container {
-    // padding-left: 10vw;
-    padding-top: 20vh;
-    // width: 100vw;
-    // overflow-y: hidden;
-  }
+
+}
+
+.lax-container {
+    padding: 0;
+    background-color: #dedbde;
+    background-image: linear-gradient(rgba(255, 255, 255, .2) 50%, transparent 50%, transparent);
+    margin: 0;
+    background-size: 700px 700px;
+    height: 1000000px;
+    // // padding-left: 10vw;
+    // padding-top: 20vh;
+    // // width: 100vw;
+    // // overflow-y: hidden;
+}
